@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIVIL REGISTRATION SERVICE</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <style>
+        body{
+            background-color: green;
+            color: black;
+            font-size: medium;
+            text-decoration: none;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        img{
+            border: 2em;
+            width: 20vh;
+            height: 35vh;
+        }
+        .img{
+            align-content: right;
+        }
+        h2{
+            text-align: center;
+            justify-content: center;
+        }
+        p{
+            text-align: center;
+        }
+        h3{
+            text-align: center;
+        }
+        form{
+            text-align: right;
+            background-color: brown;
+            font-size: 20px;
+            padding: 2em;
+            margin: auto;
+        }
+    </style>
+    <img src="image/harambee.svg" alt="logo">
+    <h2>REPUBLIC OF KENYA</h2><hr>
+    <form action="/action_page.php">
+        <label for="Serial/ABN Number">Enter the Serial/ABN Number</label>
+        <input type="text" id="Serial/ABN Number" name="Serial/ABN Number"><br>
+        <label for="Year Of Birth/Death">Enter Year Of Birth/Death:</label>
+        <select id="ddlYears"></select>
+        <label for="Event">Event:</label>
+        <select name="Event" id="Event">
+            <option value="Birth">Birth</option>
+            <option value="Death">Death</option>
+        </select><br>
+        <input type="button" value="search">
+        <input type="button" value="clear">
+      </form>
+      <P>Department of Civil Registration Services.</P>
+      <p>(Registration Of Births and Deaths.)</p>
+      <h3>Huduma Bora Ni Haki Ya Mwananchi</h3>
+      <script type="text/javascript">
+        window.onload = function () {
+            //Reference the DropDownList.
+            var ddlYears = document.getElementById("ddlYears");
+     
+            //Determine the Current Year.
+            var currentYear = (new Date()).getFullYear();
+     
+            //Loop and add the Year values to DropDownList.
+            for (var i = 1990; i <= currentYear; i++) {
+                var option = document.createElement("OPTION");
+                option.innerHTML = i;
+                option.value = i;
+                ddlYears.appendChild(option);
+            }
+        };
+    </script>
+</body>
+</html>
